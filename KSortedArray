@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+   vector<int> a = {4,1,5,2,6};
+   int K = 2;
+   priority_queue<int, vector<int>, greater<int>> pq;
+   int i;
+   for(i=0; i<=K; i++){
+       pq.push(a[i]);
+   }
+   int index = 0;
+   while(i<a.size()){
+       a[index] = pq.top();
+       pq.pop();
+       index++;
+       pq.push(a[i]);
+       i++;
+   }
+   while(index<a.size()){
+       a[index] = pq.top();
+       pq.pop();
+       index++;
+   }
+   for(auto j : a){
+       cout<<j<<" ";
+   }
+   
+   
+}
